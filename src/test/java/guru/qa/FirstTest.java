@@ -15,28 +15,73 @@ public class FirstTest {
     @Test
     void firstTest() {
         open ("https://demoqa.com/automation-practice-form");
-        $("[id=firstName]").setValue("Vitoriia");     //заполняеи поле имя
-        $("[id=lastName]").setValue("Sun");     //заполняеи поле фамилия
-        $("#userEmail").setValue("IronLady@gmail.com"); // заполняем эл.почту
-        $("[for=gender-radio-1]").click();    //выбираем пол
-        $("[id=userNumber]").setValue("9302764785");   //заполняет тел
-        $("#dateOfBirthInput").click();   //открываем календарь
-        $(".react-datepicker__month-select").selectOptionByValue("4");  //выбираем месяц
-        $(".react-datepicker__year-select").selectOptionByValue("1993");  //выбираем год
-        $(".react-datepicker__day").click();   //выбираем рандомную дату
-        $("#subjectsInput").click();  //кликаем на поле с выпадающим списком
-        $("#subjectsInput").setValue("d");  //вбиваем букву ,чтобы появился выпадающий список
-        $(byText("Hindi")).click();   //выбираем значение из списка
-        $("[for=hobbies-checkbox-1]").click();    //заполняет увлечения
+        //заполняеи поле имя
+        $("[id=firstName]").setValue("Vitoriia");
+
+        //заполняеи поле фамилия
+        $("[id=lastName]").setValue("Sun");
+
+        // заполняем эл.почту
+        $("#userEmail").setValue("IronLady@gmail.com");
+
+        //выбираем пол
+        $("[for=gender-radio-1]").click();
+
+        //заполняем тел
+        $("[id=userNumber]").setValue("9302764785");
+
+        //открываем календарь
+        $("#dateOfBirthInput").click();
+        //выбираем месяц
+        $(".react-datepicker__month-select").selectOptionByValue("4");
+        //выбираем год
+        $(".react-datepicker__year-select").selectOptionByValue("1993");
+        //выбираем рандомную дату
+        $(".react-datepicker__day").click();
+
+        //кликаем на поле с выпадающим списком
+        $("#subjectsInput").click();
+        //вбиваем букву ,чтобы появился выпадающий список
+        $("#subjectsInput").setValue("d");
+        //выбираем значение из списка
+        $(byText("Hindi")).click();
+
+        //заполняем увлечения
+        $("[for=hobbies-checkbox-1]").click();
+
+        //загрузка файла
+        $("#uploadPicture").uploadFile(new File("src/test/resources/A33.PNG"));
+
+        $("[id=currentAddress]").setValue("Moscow Kremlin"); //пишем адрес
+        $("#state").click();
+        $(byText("NCR")).click();   //выбираем значение из списка Штат
+        $("#city").click();
+        $(byText("Noida")).click();   //выбираем значение из списка город
+        $("[id=submit]").click();    //кликаем на кнопку Submit
 
 
-        $("[for=gender-radio-1]").setValue("test");
-        $("#hobbies-checkbox-3").click();
-        $("[#upload]").uploadFile(new File("cv.doc")); //списала с чатика
-        $("[]").setValue("");
-        $("[]").setValue("");
-        $("[]").setValue("");
+        // Проверка заполнения
+        validation("Student Name","Vitoriia");
+        validation("Student Email","IronLady@gmail.com");
+        validation("Gender","Male");
+        validation("Mobile","9302764785");
+        validation("Date of Birth","May,1993");
+        validation("Subjects","Hindi");
+        validation("Hobbies","Sports");
+        validation("Picture","A33.PNG");
+        validation("Address","Moscow Kremlin");
+        validation("State and City","NCR Noida");
 
-        /* $("[for=dateOfBirthInput]").click(); */
+        // Для проверки
+        sleep(2000);
+
+
+
+
+
+    }
+
+    private void validation(String student_name, String alex_vass) {
+
     }
 }
