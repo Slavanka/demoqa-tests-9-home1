@@ -39,6 +39,9 @@ public class FirstTest {
         //выбираем рандомную дату
         $(".react-datepicker__day").click();
 
+        //скролл страницы вниз
+        $(byText("Sports")).scrollTo();
+
         //кликаем на поле с выпадающим списком
         $("#subjectsInput").click();
         //вбиваем букву ,чтобы появился выпадающий список
@@ -72,8 +75,8 @@ public class FirstTest {
         validation("Address","Moscow Kremlin");
         validation("State and City","NCR Noida");
 
-        // Для проверки
-        sleep(2000);
+        // Для проверки данных увеличиваем время отображения окна с данными
+        sleep(6000);
 
 
 
