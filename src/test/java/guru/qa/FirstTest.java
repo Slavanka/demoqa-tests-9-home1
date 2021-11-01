@@ -10,6 +10,7 @@ import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.files.DownloadActions.click;
+import static java.lang.String.*;
 
 public class FirstTest {
     @Test
@@ -53,7 +54,7 @@ public class FirstTest {
         $("[for=hobbies-checkbox-1]").click();
 
         //загрузка файла
-        $("#uploadPicture").uploadFile(new File("src/test/resources/A33.PNG"));
+        $("#uploadPicture").uploadFromClasspath("A33.PNG");
 
         $("[id=currentAddress]").setValue("Moscow Kremlin"); //пишем адрес
         $("#state").click();
@@ -75,16 +76,12 @@ public class FirstTest {
         validation("Address","Moscow Kremlin");
         validation("State and City","NCR Noida");
 
-        // Для проверки данных увеличиваем время отображения окна с данными
-        sleep(6000);
-
-
-
-
 
     }
 
-    private void validation(String student_name, String alex_vass) {
 
+    private void validation(String key, String meaning) {
+        $(".table-responsive").$(byText(key)).parent().shouldHave(text(meaning));
     }
 }
+
