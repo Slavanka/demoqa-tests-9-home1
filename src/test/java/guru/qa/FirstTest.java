@@ -69,7 +69,7 @@ public class FirstTest {
         validation("Student Email","IronLady@gmail.com");
         validation("Gender","Male");
         validation("Mobile","9302764785");
-        validation("Date of Birth","May,1993");
+        validation("Date of Birth","April,1993");
         validation("Subjects","Hindi");
         validation("Hobbies","Sports");
         validation("Picture","A33.PNG");
@@ -80,7 +80,7 @@ public class FirstTest {
     }
 
 
-    private void validation(String key, String meaning) {
+    public void validation(String key, String meaning) {
         $(".table-responsive").$(byText(key)).parent().shouldHave(text(meaning));
     }
 }
