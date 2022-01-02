@@ -1,16 +1,10 @@
 package guru.qa;
 
-import com.codeborne.selenide.impl.WebElementSelector;
 import org.junit.jupiter.api.Test;
-import org.openqa.selenium.By;
-
-import java.io.File;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
-import static com.codeborne.selenide.files.DownloadActions.click;
-import static java.lang.String.*;
 
 public class FirstTest {
     @Test
@@ -64,20 +58,29 @@ public class FirstTest {
         $("[id=submit]").click();    //кликаем на кнопку Submit
 
 
-        // Проверка заполнения
-        validation("Student Name","Vitoriia");
-        validation("Student Email","IronLady@gmail.com");
-        validation("Gender","Male");
-        validation("Mobile","9302764785");
-        validation("Date of Birth","April,1993");
-        validation("Subjects","Hindi");
-        validation("Hobbies","Sports");
-        validation("Picture","A33.PNG");
-        validation("Address","Moscow Kremlin");
-        validation("State and City","NCR Noida");
+
+        //Добавляем PageObjects
 
 
-    }
+
+
+
+
+
+        // Для истории. Проверка заполнения, вариант в дз №2
+//        validation("Student Name","Vitoriia");
+//        validation("Student Email","IronLady@gmail.com");
+//        validation("Gender","Male");
+//        validation("Mobile","9302764785");
+//        validation("Date of Birth","April,1993");
+//        validation("Subjects","Hindi");
+//        validation("Hobbies","Sports");
+//        validation("Picture","A33.PNG");
+//        validation("Address","Moscow Kremlin");
+//        validation("State and City","NCR Noida");
+//
+//        sleep(20000); //залипание, для проверки теста
+   }
 
 
     public void validation(String key, String meaning) {
