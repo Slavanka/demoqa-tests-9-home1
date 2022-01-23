@@ -54,7 +54,7 @@ public class FirstTest {
         $("[for=hobbies-checkbox-1]").click();
 
         //загрузка файла
-        $("#uploadPicture").uploadFromClasspath("A33.PNG");
+        $("#uploadPicture").uploadFromClasspath("cv.png");
 
         $("[id=currentAddress]").setValue("Moscow Kremlin"); //пишем адрес
         $("#state").click();
@@ -72,7 +72,7 @@ public class FirstTest {
         validation("Date of Birth","April,1993");
         validation("Subjects","Hindi");
         validation("Hobbies","Sports");
-        validation("Picture","A33.PNG");
+        validation("Picture","cv.png");
         validation("Address","Moscow Kremlin");
         validation("State and City","NCR Noida");
 
